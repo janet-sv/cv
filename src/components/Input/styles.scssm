@@ -1,0 +1,26 @@
+@import "~sass/utils/index";
+
+.container {
+  margin-bottom: 20px;
+}
+
+.label {
+  color: $grey;
+  display: block;
+  font-size: 15px;
+  margin-bottom: 5px;
+}
+
+.input {
+  border: none;
+  border-bottom: 1px solid $grey-dark;
+  display: block;
+  font-size: 14px;
+  padding: 5px;
+  resize: vertical;
+  width: 100%;
+
+  &:focus {
+    outline: none;
+  }
+}

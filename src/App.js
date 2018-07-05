@@ -1,45 +1,125 @@
 import React, { PureComponent } from 'react';
 import Helmet from 'react-helmet';
-import ExampleModal from 'components/ExampleModal';
-import ExampleFetch from 'components/ExampleFetch';
-import reactLogo from 'assets/images/react-logo.png';
-import reactRouterLogo from 'assets/images/react-router-logo.png';
-import sassLogo from 'assets/images/sass-logo.svg';
-import reactCssModulesLogo from 'assets/images/react-css-modules-logo.png';
-import bulmaLogo from 'assets/images/bulma-logo.png';
+import Sidebar from 'components/Sidebar';
+import Content from 'components/Content';
+import Form from 'components/Form';
 import './App.scssm';
 
-const title = 'react-simple-boilerplate';
-
-const ExampleComponent = ({ title, children }) => (
-  <div className="box" styleName="mb-small">
-    <h3 className="title is-5">{title}</h3>
-    <div>
-      {children}
-    </div>
-  </div>
-);
-
-const TechListItem = ({ title, image, link }) => (
-  <div styleName="flex-container">
-    <div styleName="flex-container list-item-info">
-      <span className="has-text-grey-darker" styleName="list-item-title">
-        {title}
-      </span>
-      <img src={image} styleName="list-item-image" alt={title} />
-    </div>
-    <a
-      className="has-text-grey-darker"
-      href={link}
-      target="_blank"
-    >
-      (Docs)
-    </a>
-  </div>
-);
+const title = 'CV';
 
 class App extends PureComponent {
   render() {
+    const sidebarProps = {
+      photo: 'https://scontent.flim5-2.fna.fbcdn.net/v/t1.0-9/561970_546099155445914_2064219501_n.jpg?oh=a10b839add07d459c057605e8aaa6c7f&oe=5A69ACF4',
+      name: 'Janet',
+      lastname: 'Sarmiento Valdivia',
+      labor: 'Desarrollador Web',
+      mobile: '947314887',
+      email: 'janet.sarmientov@gmail.com',
+      objective: `Busco implementar soluciones tecnológicas que resuelvan uno o
+        más problemas del usuario, a la par de mejorar su experiencia frente a esta necesidad`,
+      nationality: 'Peruana',
+      birthdate: '7 de Febrero',
+      languages: [{
+        name: 'Inglés',
+        talking: 'Intermedio',
+        writing: 'Intermedio',
+      }],
+      goals: [{
+        id: 1,
+        description: 'Ganador de la Hackaton ODS 2017 - Equipo Chatbot'
+      }],
+      activities: [{
+        id: 1,
+        description: 'Miembro del comité organizador de .ZIP - Organizadora General (2014)',
+      }, {
+        id: 2,
+        description: 'Miembro de la Asociación de Alumnos de Ingeniería Informática (AAII) - Coordinadora Académica (2014)',
+      }],
+      interests: [{
+        category: 'music',
+        name: 'Música',
+      }, {
+        category: 'films',
+        name: 'Películas'
+      }, {
+        category: 'design',
+        name: 'Compras',
+      }, {
+        category: 'ux',
+        name: 'UX',
+      }],
+    };
+
+    const contentProps = {
+      education: [{
+        place: 'PONTIFICIA UNIVERSIDAD CATÓLICA DEL PERÚ',
+        date: '2011 - 2016',
+        description: 'Bachiller en Ingeniería Informática',
+      }],
+      experience: [{
+        date: 'Ene 2017 - Presente',
+        company: 'Tekton Labs',
+        position: 'Desarrollador Web',
+      }, {
+        date: 'Ago 2017 - Presente',
+        company: 'Pontificia Universidad Católica del Perú',
+        position: 'Pre-Docente TPA. Curso: Sistemas de Información 1',
+      }, {
+        date: 'Ago 2016 - Dic 2016',
+        company: 'Pontificia Universidad Católica del Perú',
+        position: 'Instructor. Curso: Bases de Datos',
+      }, {
+        date: 'Ago 2016 - Dic 2016',
+        company: 'Pontificia Universidad Católica del Perú',
+        position: 'Instructor. Curso: Introducción a la Computación',
+      }, {
+        date: 'Ago 2015 - Ago 2016',
+        company: 'Tekton Labs',
+        position: 'Practicante de Desarrollo Web',
+      }, {
+        date: 'Mar 2014 - Set 2014',
+        company: 'Programa Nacional de Conservación de Bosques',
+        position: 'Practicante de Tecnologías de Información',
+      }],
+      courses: [{
+        date: 'Jul 2017 - Set 2017',
+        place: 'TOULOUSE LAUTREC',
+        description: 'Diseño de Experiencia de Usuario'
+      }, {
+        date: 'Ene 2015 - Feb 2015',
+        place: 'SISTEMAS UNI',
+        description: 'Implementación en SQL Server Management Studio 2012'
+      }],
+      techSkills: [{
+        name: 'HTML5',
+        number: 9,
+      }, {
+        name: 'CSS3',
+        number: 9,
+      }, {
+        name: 'Sass',
+        number: 8,
+      }, {
+        name: 'ReactJS',
+        number: 9,
+      }, {
+        name: 'VueJS',
+        number: 7,
+      }, {
+        name: 'NodeJS',
+        number: 6,
+      }, {
+        name: 'Redux',
+        number: 3,
+      }],
+      skills: [{
+        name: 'Trabajo en equipo.',
+      }, {
+        name: 'Buena disposición para aprender.',
+      }]
+    };
+
     return (
       <div>
         <Helmet>
@@ -50,98 +130,10 @@ class App extends PureComponent {
           <title>{title}</title>
         </Helmet>
 
-        <section className="hero is-medium is-warning is-bold">
-          <div className="hero-body">
-            <div className="container">
-              <h1 className="title">
-                react-simple-boilerplate
-              </h1>
-              <p className="subtitle">
-                A React boilerplate for simple static web apps
-              </p>
-            </div>
-          </div>
-        </section>
-
-        <section className="hero is-light">
-          <div className="hero-body">
-            <div className="container">
-              <h2 className="title">
-                Same workflow as <a href="https://github.com/facebookincubator/create-react-app">create-react-app</a>
-              </h2>
-              <p className="subtitle">
-                To get started, edit <code>src/App.js</code> and save to reload.
-              </p>
-            </div>
-          </div>
-        </section>
-
-        <section className="section has-text-left">
-          <div className="container">
-            <h2 className="title">Example Components</h2>
-            <p className="subtitle">
-              You may keep these components in your project or jut use them as reference.
-            </p>
-
-            <div>
-              <ExampleComponent title="Example Modal">
-                <ExampleModal />
-              </ExampleComponent>
-
-              <ExampleComponent title="Example for fetching from an API">
-                <ExampleFetch />
-              </ExampleComponent>
-            </div>
-          </div>
-        </section>
-
-        <section className="section has-text-left">
-          <div className="container">
-            <h2 className="title">Technologies</h2>
-            <h3 className="subtitle">
-              These are some of the technologies that power this project.
-            </h3>
-            <ul>
-              <li>
-                <TechListItem
-                  title="React"
-                  image={reactLogo}
-                  link="https://facebook.github.io/react/docs/hello-world.html"
-                />
-                <TechListItem
-                  title="React Router"
-                  image={reactRouterLogo}
-                  link="https://github.com/ReactTraining/react-router"
-                />
-                <TechListItem
-                  title="Sass"
-                  image={sassLogo}
-                  link="http://sass-lang.com/documentation/file.SASS_REFERENCE.html"
-                />
-                <TechListItem
-                  title="React CSS Modules"
-                  image={reactCssModulesLogo}
-                  link="https://github.com/gajus/babel-plugin-react-css-modules"
-                />
-                <TechListItem
-                  title="Bulma"
-                  image={bulmaLogo}
-                  link="http://bulma.io/documentation/elements/content/"
-                />
-              </li>
-            </ul>
-          </div>
-        </section>
-
-        <footer className="footer">
-          <div className="container">
-            <div className="content has-text-centered">
-              <p>
-                <strong>Powered by</strong> <a href="https://github.com/gianlucacandiotti/react-simple-boilerplate">react-simple-boilerplate</a>
-              </p>
-            </div>
-          </div>
-        </footer>
+        <div styleName="app" id="cv">
+          <Sidebar {...sidebarProps} />
+          <Content {...contentProps}/>
+        </div>
       </div>
     );
   }

@@ -1,0 +1,112 @@
+@import "~sass/utils/index";
+
+.sidebar {
+  width: 35%;
+  min-height: 100%;
+  background: $primary-color;
+  padding: 20px;
+  padding-top: 60px;
+  color: $black;
+}
+
+.name {
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  line-height: 25px;
+  font-size: 25px;
+  margin-top: 35px;
+  text-align: center;
+}
+
+.lastname {
+  font-weight: 800;
+}
+
+.labor {
+  color: $white;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  text-align: center;
+  margin-top: 5px;
+}
+
+.contact {
+  padding: 35px 0;
+  border-bottom: 1px solid $black;
+}
+
+.contact-element {
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+.title {
+  font-weight: 600;
+  font-size: 20px;
+  letter-spacing: 2px;
+  margin-bottom: 15px;
+}
+
+.subtitle {
+  color: $white;
+  margin-bottom: 20px;
+  font-weight: 600;
+  font-size: 15px;
+  letter-spacing: 2px;
+}
+
+.objective-container {
+  padding: 35px 0;
+  font-size: 15px;
+}
+
+.objective {
+  letter-spacing: 1px;
+  margin-bottom: 30px;
+}
+
+.information-container {}
+
+.information-element {
+  margin-top: 40px;
+}
+
+.list {
+  font-size: 15px;
+  margin-bottom: 15px;
+}
+
+.list-item {
+  white-space: pre;
+  letter-spacing: 1px;
+
+  &.is-bold {
+    font-weight: 600;
+  }
+}
+
+.items {
+  font-size: 15px;
+}
+
+.dot {
+  min-width: 12px;
+  margin-right: 5px;
+}
+
+.item {
+  display: flex;
+  align-items: baseline;
+  margin-bottom: 20px;
+}
+
+.interests {
+  display: flex;
+  font-size: 15px;
+  letter-spacing: 1px;
+  flex-wrap: wrap;
+}
+
+.interest {
+  min-width: 50%;
+}

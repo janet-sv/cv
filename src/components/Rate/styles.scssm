@@ -1,0 +1,17 @@
+@import "~sass/utils/index";
+
+.rate {
+  display: flex;
+}
+
+.circle {
+  background: $black;
+  width: 15px;
+  height: 15px;
+  border-radius: 15px;
+  margin-right: 8px;
+
+  &.is-active {
+    background: $primary-color;
+  }
+}

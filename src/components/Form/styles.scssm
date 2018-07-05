@@ -1,0 +1,43 @@
+@import "~sass/utils/index";
+
+.container {
+  padding: 20px;
+}
+
+.section {
+  position: relative;
+}
+
+.section-title {
+  font-weight: 500;
+  margin: 30px 0;
+  color: $primary-color;
+}
+
+.add {
+  font-size: 14px;
+  position: absolute;
+  right: 0;
+  padding: 3px 5px;
+  color: $white;
+  background: $primary-color;
+  border-radius: 3px;
+}
+
+.group {
+  position: relative;
+}
+
+.delete {
+  position: absolute;
+  background: $primary-color;
+  color: $white;
+  font-size: 14px;
+  padding: 5px;
+  border-radius: 30px;
+  height: 30px;
+  width: 30px;
+  text-align: center;
+  right: 0;
+  top: -4px;
+}
